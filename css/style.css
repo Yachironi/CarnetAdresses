@@ -1,0 +1,39 @@
+.right-tabs li {
+	float: right;
+	/*border-bottom: 0px;*/
+}
+.container_1 {
+	margin: 5px;
+	width: 700px;
+	/*   width: 400px;
+	 height: 20px;
+	 display: inline-block;*/
+}
+
+.first {
+	min-width: 300px;
+	display: inline-block;
+}
+.second {
+	min-width: 300px;
+	display: inline-block;
+}
+.form-group.required .control-label:after {
+	color: #d00;
+	content: "*";
+	position: absolute;
+	margin-left: 8px;
+	top: 7px;
+}
+
+.error {
+	border: 1px solid #b94a48 !important;
+	background-color: #fee !important;
+}
+.error_label {
+	color: #d00;
+	margin-left:170px;
+}
+.non_error_label {
+	display: none;
+}
