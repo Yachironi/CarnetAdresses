@@ -44,6 +44,7 @@ $(document).ready(function() {
 				 alert(responseData);
 				 }*/
 				console.info(responseData);
+				if(responseData.nom != "true" || responseData.email != "true"){
 				if (responseData.nom != "true") {
 					//alert(responseData.nom);
 					$("#error_nom").attr("class", "error_label");
@@ -59,7 +60,13 @@ $(document).ready(function() {
 				}else{
 					$("#error_mail").attr("class", "non_error_label");
 					$("#error_mail" ).html();
+				}}else{
+					$("#error_nom" ).html();
+					$("#error_mail" ).html();
+					alert("Adresse ajouter avec succès !!!");
 				}
+				$('#adresseform')[0].reset();
+
 			},
 			error : function(jqXHR, textStatus, errorThrown) {
 				console.log(errorThrown);
