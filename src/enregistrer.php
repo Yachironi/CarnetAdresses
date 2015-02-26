@@ -20,6 +20,8 @@ if ($email == "") {
 
 if ($nom == "") {
     $erreurs['nom'] = "le nom est vide";
+}else if(strlen($nom)<2||strlen($nom)>20){
+        $erreurs['nom'] = "Le nom doit comporter entre 2 et 20 caractères";
 }
 
 echo json_encode($erreurs);
