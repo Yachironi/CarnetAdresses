@@ -24,6 +24,21 @@ if ($nom == "") {
         $erreurs['nom'] = "Le nom doit comporter entre 2 et 20 caractères";
 }
 
+
+if($erreurs['nom']=="true"&&$erreurs['email']=="true"){
+    // Enregistrement dans la BD
+    $db = mysql_connect('127.0.0.1', 'yachironi_1', ''); 
+    mysql_select_db('carnetadresses',$db); 
+    $sql = "INSERT INTO  `carnetadresses`.`adresse` (`nom` ,`email` ,`notes`) VALUES ('$nom',  '$email',  '$notes');"; 
+    $req = mysql_query($sql);
+    if($db==false){
+        $erreurs['nom']="Erreur de connection a la base de donnee ";
+    }else if( $req==false){
+        $erreurs['nom']="requette mal forme ";
+    }
+    mysql_close($db);
+}
+
 echo json_encode($erreurs);
 
 //session_destroy();
