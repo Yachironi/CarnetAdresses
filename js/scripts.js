@@ -32,43 +32,58 @@ $(document).ready(function() {
 		//	alert(datastring);
 
 		$.ajax({
-			type : "post",
-			url : "./src/enregistrer.php",
-			data : datastring,
-			dataType : "json",
-			contentType : "application/x-www-form-urlencoded",
-			success : function(responseData, textStatus, jqXHR) {
+			type: "post",
+			url: "./src/enregistrer.php",
+			data: datastring,
+			dataType: "json",
+			contentType: "application/x-www-form-urlencoded",
+			success: function(responseData, textStatus, jqXHR) {
 				/*	if(responseData=="true"){
 				 alert("Sucess !!");
 				 }else{
 				 alert(responseData);
 				 }*/
 				console.info(responseData);
-				if(responseData.nom != "true" || responseData.email != "true"){
-				if (responseData.nom != "true") {
-					//alert(responseData.nom);
-					$("#error_nom").attr("class", "error_label");
-					$("#error_nom" ).html(responseData.nom);
-				}else{
-				$("#error_nom").attr("class", "non_error_label");
-					$("#error_nom" ).html();
+				if (responseData.nom != "true" || responseData.email != "true") {
+					if (responseData.nom != "true") {
+						//alert(responseData.nom);
+						$('#fail').fadeIn("fast", function() {
+							$(this).delay(2000).fadeOut("slow");
+						});
+						$("#error_nom").attr("class", "error_label");
+						$("#error_nom").html(responseData.nom);
+					}
+					else {
+						$("#error_nom").attr("class", "non_error_label");
+						$("#error_nom").html();
+					}
+					if (responseData.email != "true") {
+						//alert(responseData.email);
+						$('#fail').fadeIn("fast", function() {
+							$(this).delay(2000).fadeOut("slow");
+						});
+						$("#error_mail").attr("class", "error_label");
+						$("#error_mail").html(responseData.email);
+					}
+					else {
+						$("#error_mail").attr("class", "non_error_label");
+						$("#error_mail").html();
+					}
 				}
-				if (responseData.email != "true") {
-					//alert(responseData.email);
-					$("#error_mail").attr("class", "error_label");
-					$("#error_mail" ).html(responseData.email);
-				}else{
+				else {
 					$("#error_mail").attr("class", "non_error_label");
-					$("#error_mail" ).html();
-				}}else{
-					$("#error_nom" ).html();
-					$("#error_mail" ).html();
-					alert("Adresse ajouter avec succès !!!");
+					$("#error_nom").attr("class", "non_error_label");
+					$("#error_nom").html();
+					$("#error_mail").html();
+					$('#sucess').fadeIn("fast", function() {
+						$(this).delay(1000).fadeOut("slow");
+					});
+					$('#adresseform')[0].reset();
+
 				}
-				$('#adresseform')[0].reset();
 
 			},
-			error : function(jqXHR, textStatus, errorThrown) {
+			error: function(jqXHR, textStatus, errorThrown) {
 				console.log(errorThrown);
 			}
 		})

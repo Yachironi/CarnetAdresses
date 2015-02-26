@@ -128,6 +128,9 @@
 										</div>
 									</div>
 								</form>
+									<!--<div id="sucess" style="display:none;">Ajout d'adresse fait avec succès</div> -->
+<div id="sucess" style="display:none;" class="alert alert-success" role="alert">Ajout d'adresse fait avec succès</div>
+<div id="fail" style="display:none;" class="alert alert-danger" role="alert">Oups...Une faute à quelque part</div>
 
 								<!--
 								================
