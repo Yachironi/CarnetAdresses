@@ -75,21 +75,8 @@
 								</tr>
 							</table>
 							--->
-							<div style="max-width: 550px; margin-top: 20px;">
-							<table class="table table-bordered">
-								<tr>
-									<td class="active col-sm-3">Nom</td>
-									<td class="col-sm-9">Yasser RABI</td>
-								</tr>
-								<tr>
-									<td class="active col-sm-3">Adresse mail</td>
-									<td class="col-sm-9">yachironi@hotmail.com</td>
-								</tr>
-								<tr>
-									<td class="active col-sm-3">Notes</td>
-									<td class="col-sm-9">notes exemple</td>
-								</tr>
-							</table>
+							<div style="max-width: 550px; margin-top: 20px;" id="adresses">
+						
 							</div>
 						</div>
 						<div class="tab-pane active" id="panel-935833">

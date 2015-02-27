@@ -23,6 +23,7 @@
  }*/
 
 $(document).ready(function() {
+	update_adresses();
 	$("#adresseform").submit(function(event) {
 
 		//stop form from submitting normally
@@ -79,7 +80,7 @@ $(document).ready(function() {
 						$(this).delay(1000).fadeOut("slow");
 					});
 					$('#adresseform')[0].reset();
-
+					update_adresses();
 				}
 
 			},
@@ -90,3 +91,34 @@ $(document).ready(function() {
 	});
 
 });
+
+
+function update_adresses() {
+
+
+
+$("#adresses").html("");
+$.getJSON("./src/update.php",function(data){
+	
+					console.info(data);
+$.each(data.adresses, function(i,adresse){
+var newRow =
+"<table class=\"table table-bordered\">"
+								+"<tr>"
+									+"<td class=\"active col-sm-3\">Nom</td>"
+									+"<td class=\"col-sm-9\">"+adresse.nom+"</td>"
+								+"</tr>"
+								+"<tr>"
+									+"<td class=\"active col-sm-3\">Adresse mail</td>"
+									+"<td class=\"col-sm-9\">"+adresse.email+"</td>"
+								+"</tr>"
+								+"<tr>"
+									+"<td class=\"active col-sm-3\">Notes</td>"
+									+"<td class=\"col-sm-9\">"+adresse.notes+"</td>"
+								+"</tr>"
+							+"</table>" ;
+
+$(newRow).appendTo("#adresses");
+});
+});
+}
