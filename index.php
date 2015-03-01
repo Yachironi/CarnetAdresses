@@ -47,39 +47,20 @@
 				<div class="tabbable" id="tabs-802249">
 					<ul class="nav nav-tabs right-tabs">
 
-						<li class="active ">
-							<a href="#panel-935833" data-toggle="tab">Ajouter un contact</a>
-						</li>
 						<li>
-							<a href="#panel-294850" data-toggle="tab">Mes contacts</a>
+							<a href="#ajoutAdresse" data-toggle="tab">Ajouter un contact</a>
+						</li>
+						<li class="active ">
+							<a href="#consultAdresse" data-toggle="tab">Mes contacts</a>
 						</li>
 					</ul>
 					<div class="tab-content">
-						<div class="tab-pane" id="panel-294850">
-							<!--
-							<table class="table table-bordered">
-								<tr>
-									<td>Nom</td>
-									<td>Email</td>
-									<td>Notes</td>
-								</tr>
-								<tr>
-									<td>Yasser</td>
-									<td>yachironi@hotmail.com</td>
-									<td>notes</td>
-								</tr>
-								<tr>
-									<td>Yasser</td>
-									<td>yachironi@hotmail.com</td>
-									<td>notes</td>
-								</tr>
-							</table>
-							--->
+						<div class="tab-pane active" id="consultAdresse">
 							<div style="max-width: 550px; margin-top: 20px;" id="adresses">
-						
+
 							</div>
 						</div>
-						<div class="tab-pane active" id="panel-935833">
+						<div class="tab-pane" id="ajoutAdresse">
 							<div id="form-container" style="max-width: 550px; margin-top: 20px;">
 
 								<form id="adresseform" class="form-horizontal">
@@ -110,41 +91,19 @@
 											<button class="btn btn-default" id="enregistrer">
 												Enregistrer
 											</button>
-
-											<!-- <input type="submit" value="enregistrer" id="enregistrer" />-->
 										</div>
 									</div>
 								</form>
-									<!--<div id="sucess" style="display:none;">Ajout d'adresse fait avec succès</div> -->
-<div id="sucess" style="display:none;" class="alert alert-success" role="alert">Ajout d'adresse fait avec succès</div>
-<div id="fail" style="display:none;" class="alert alert-danger" role="alert">Oups...Une faute à quelque part</div>
-
-								<!--
-								================
-
-								<div class="first">
-								<label for="name">Nom:</label>
-								</div>
-								<div class="second">
-								<input type="text" class="form-control" id="name">
-								</div>
-								<div class="first">
-								<label for="mail">Adresse mail:</label>
-								</div>
-								<div class="second">
-								<input type="text" class="form-control" id="mail">
-								</div>
-								<div class="first" >
-								<label for="notes">Notes :</label>
-								</div>
-								<div class="second">
-								<textarea class="form-control" rows="3" id="notes" style="margin-bottom: -65px;"></textarea>
-								</div> -->
+								<div id="sucess" style="display:none;" class="alert alert-success" role="alert">Ajout d'adresse fait avec succès</div>
+								<div id="fail" style="display:none;" class="alert alert-danger" role="alert">Oups...Une faute à quelque part</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="row clearfix ">
+		 <div stylclass="col-md-4 col-md-offset-5">Copyleft Yasser RABI - ET4 Info - Polytech Paris-Sud</div>
 		</div>
 	</div>
 </body>

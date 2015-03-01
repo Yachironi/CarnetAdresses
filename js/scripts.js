@@ -1,31 +1,7 @@
-/*function enregistrer() {
- var OAjax;
- if (window.XMLHttpRequest)
- OAjax = new XMLHttpRequest();
- else if (window.ActiveXObject)
- OAjax = new ActiveXObject('Microsoft.XMLHTTP');
- OAjax.open('POST', "src/enregistrer.php", true);
- OAjax.onreadystatechange = function() {
- if (OAjax.readyState == 4 && OAjax.status == 200) {
- if (document.getElementById) {
- if (OAjax.responseText == 'true') {// OK
- document.getElementById('error_nom').innerHTML = '<font color=GREEN> True </font>';
- } else { //  PAS OK
- document.getElementById('error_nom').innerHTML = '<font color=RED>' + OAjax.responseText + '</font>';
- document.getElementById('error_mail').innerHTML = '<font color=RED>' + OAjax.responseText + '</font>';
- }
- }
- }
- }
- OAjax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
- OAjax.send($("#adresse_form").serialize());
- //OAjax.send('lat=' + lat + '&lng=' + lng + '&desc=' + desc + '&icon=' + icon + '&titre=' + titre);
- }*/
-
 $(document).ready(function() {
 	update_adresses();
+	
 	$("#adresseform").submit(function(event) {
-
 		//stop form from submitting normally
 		event.preventDefault();
 
@@ -95,12 +71,8 @@ $(document).ready(function() {
 
 function update_adresses() {
 
-
-
 $("#adresses").html("");
 $.getJSON("./src/update.php",function(data){
-	
-					console.info(data);
 $.each(data.adresses, function(i,adresse){
 var newRow =
 "<table class=\"table table-bordered\">"
@@ -111,12 +83,18 @@ var newRow =
 								+"<tr>"
 									+"<td class=\"active col-sm-3\">Adresse mail</td>"
 									+"<td class=\"col-sm-9\">"+adresse.email+"</td>"
-								+"</tr>"
-								+"<tr>"
+								+"</tr>";
+								
+if(adresse.notes!=""){
+newRow=newRow+"<tr>"
 									+"<td class=\"active col-sm-3\">Notes</td>"
 									+"<td class=\"col-sm-9\">"+adresse.notes+"</td>"
 								+"</tr>"
 							+"</table>" ;
+}else{
+	newRow = newRow+ 		+"</table>" ;
+}
+								
 
 $(newRow).appendTo("#adresses");
 });

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-    // Enregistrement dans la BD
+    // Lecture de la base de données
     $db = mysql_connect('127.0.0.1', 'yachironi_1', ''); // Connection à la base de données
     mysql_select_db('carnetadresses',$db);  // Spécification du nom de la base de données
     $sql = "SELECT * FROM `adresse` ORDER BY  `adresse`.`nom` ASC;"; // Requête SQL qui donne les adresse ordonnée par les noms
