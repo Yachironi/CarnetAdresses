@@ -1,6 +1,4 @@
 <?php
-session_start();
-
     // Lecture de la base de données
     $db = mysql_connect('127.0.0.1', 'yachironi_1', ''); // Connection à la base de données
     mysql_select_db('carnetadresses',$db);  // Spécification du nom de la base de données

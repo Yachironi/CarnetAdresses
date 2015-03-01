@@ -45,6 +45,7 @@
 		<div class="row clearfix">
 			<div class="col-md-12 column">
 				<div class="tabbable" id="tabs-802249">
+							<!-- ###### Bootsrap nav tab element ###### -->
 					<ul class="nav nav-tabs right-tabs">
 
 						<li>
@@ -69,6 +70,7 @@
 										<div class="col-sm-9">
 											<input type="text" class="form-control" id="nom" name="nom" placeholder="Nom">
 										</div>
+									<!-- ###### L'affichage des erreurs est ici ###### -->
 										<label class="non_error_label" id="error_nom" for="nom">Veuillez compléter ce champ</label>
 									</div>
 									<div class="form-group required">
@@ -76,6 +78,8 @@
 										<div class="col-sm-9">
 											<input type="text" class="form-control" id="email" name="email" placeholder="Adresse mail">
 										</div>
+																			<!-- ###### L'affichage des erreurs est ici ###### -->
+
 										<label class="non_error_label" id="error_mail" for="nom">Adresse mail invalide</label>
 
 									</div>
@@ -94,6 +98,7 @@
 										</div>
 									</div>
 								</form>
+								<!-- ###### L'affichage de réponse du serveur est ici ###### -->
 								<div id="sucess" style="display:none;" class="alert alert-success" role="alert">Ajout d'adresse fait avec succès</div>
 								<div id="fail" style="display:none;" class="alert alert-danger" role="alert">Oups...Une faute à quelque part</div>
 							</div>
@@ -102,8 +107,9 @@
 				</div>
 			</div>
 		</div>
+		<!-- ###### Bannière d'auteur ###### -->
 		<div class="row clearfix ">
-		 <div stylclass="col-md-4 col-md-offset-5">Copyleft Yasser RABI - ET4 Info - Polytech Paris-Sud</div>
+		 <div class="col-md-4 col-md-offset-5">Copyleft Yasser RABI - ET4 Info - Polytech Paris-Sud</div>
 		</div>
 	</div>
 </body>

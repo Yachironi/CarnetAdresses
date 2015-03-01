@@ -1,11 +1,18 @@
 <?php
-session_start();
-$erreurs = array();
+/*
+ * Ce fichier vérifie la validité des champs et enregi
+ */
 
+$erreurs = array(); // Variable contenant les messages d'erreur pour chaque champ
+
+/*
+ * Récupération des variables de la requête poste
+ */
 $nom = $_POST['nom'];
 $email = $_POST['email'];
 $notes = $_POST['notes'];
 
+// Initialisation des erreurs à true : Pas d'erreurs
 $erreurs['nom'] = "true";
 $erreurs['email'] = "true";
 
@@ -38,7 +45,7 @@ if($erreurs['nom']=="true"&&$erreurs['email']=="true"){
     mysql_close($db);
 }
 
+// Transformation du tableau d'erreurs sous format JSON
 echo json_encode($erreurs);
 
-//session_destroy();
 ?>
