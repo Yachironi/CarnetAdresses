@@ -1,12 +1,7 @@
 <?php
        // Lecture de la base de données
-define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
-define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT'));
-define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
-define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
-define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
 echo "here 1";
-    $db = mysql_connect(DB_HOST, DB_USER,DB_PASS ); // Connection à la base de données
+    $db = mysql_connect('127.9.143.130','adminQcfpaGS','9-TQXvf-48mW'); // Connection à la base de données
     mysql_select_db('carnetadresses',$db);  // Spécification du nom de la base de données
     $sql = "SELECT * FROM `adresse` ORDER BY  `adresse`.`nom` ASC;"; // Requête SQL qui donne les adresse ordonnée par les noms
     $result = mysql_query($sql);  // Envoie de la requête au serveur de bose de donnée
