@@ -33,7 +33,7 @@ if ($nom == "") {
 // Enregistrement dans la base de donnée
 if($erreurs['nom']=="true"&&$erreurs['email']=="true"){
     // Enregistrement dans la BD
-    $db = mysql_connect('127.0.0.1', 'adminQcfpaGS', '9-TQXvf-48mW'); 
+    $db = mysql_connect('127.9.143.130','adminQcfpaGS','9-TQXvf-48mW');
     mysql_select_db('carnetadresses',$db); 
     $sql = "INSERT INTO  `carnetadresses`.`adresse` (`nom` ,`email` ,`notes`) VALUES ('$nom',  '$email',  '$notes');"; 
     $req = mysql_query($sql);
