@@ -1,6 +1,6 @@
 <?php
        // Lecture de la base de données
-    $db = mysql_connect('127.9.143.130','adminQcfpaGS','9-TQXvf-48mW'); // Connection à la base de données
+    $db = mysql_connect('host','user','password'); // Connection à la base de données
     mysql_select_db('carnetadresses',$db);  // Spécification du nom de la base de données
     $sql = "SELECT * FROM `adresse` ORDER BY  `adresse`.`nom` ASC;"; // Requête SQL qui donne les adresse ordonnée par les noms
     $result = mysql_query($sql);  // Envoie de la requête au serveur de bose de donnée
